@@ -4,7 +4,8 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "export": "vite build && php artisan portfolio:export"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",

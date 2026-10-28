@@ -3,7 +3,7 @@
 A clean, responsive, and interactive modern portfolio website built with **Laravel** and **Tailwind CSS** as part of the Web Development Intern Challenge.
 
 ## 🚀 Live Demo
-- **Deployed Site:** [https://your-app.onrender.com](https://your-app.onrender.com) *(replace with your Render / Railway / Laravel Cloud URL)*
+- **Deployed Site:** [https://your-portfolio.vercel.app](https://your-portfolio.vercel.app) *(replace with your Vercel URL after deploying)*
 
 ---
 
@@ -15,6 +15,7 @@ A clean, responsive, and interactive modern portfolio website built with **Larav
 - **Responsive Design:** Optimized for mobile, tablet, and desktop viewports, with a collapsible mobile menu.
 - **Dark Mode Support:** Toggle between light and dark themes (saved in the browser, defaults to your OS preference).
 - **Smooth Navigation:** Seamless anchor links (`#home`, `#projects`, `#contact`) and CSS transitions on buttons and cards.
+- **Easter Egg:** Click the profile picture 3 times in quick succession and it randomly either fades out and back in, or does a flip.
 
 ---
 
@@ -24,7 +25,7 @@ A clean, responsive, and interactive modern portfolio website built with **Larav
 - **Tailwind CSS 4:** Utility-first styling, responsive layout, `.dark` class dark mode
 - **JavaScript (ES6+):** DOM manipulation, form handling (`e.preventDefault()`), dark mode toggle
 - **Vite:** Asset bundling
-- **Deployment:** Any PHP-capable host (Render / Railway / Laravel Cloud)
+- **Deployment:** Static export of the Laravel page, hosted on Vercel
 
 ---
 
@@ -34,12 +35,15 @@ A clean, responsive, and interactive modern portfolio website built with **Larav
 ├── routes/web.php                         # "/" route + portfolio content (name, bio, projects)
 ├── resources/views/portfolio.blade.php    # Main Blade layout (Home, Projects, Contact)
 ├── resources/css/app.css                  # Tailwind import, dark variant, smooth scrolling
-├── resources/js/app.js                    # Dark mode, mobile menu, contact form handling
+├── resources/js/app.js                    # Dark mode, mobile menu, contact form, easter egg
+├── app/Console/Commands/ExportStatic.php  # `portfolio:export` command (renders the page to static HTML)
 ├── public/assets/                         # Profile picture, project images, favicon
+├── dist/                                  # Generated static site that Vercel serves (do not edit by hand)
+├── vercel.json                            # Tells Vercel to serve dist/ with no build step
 └── README.md                              # Project documentation
 ```
 
-> **Customizing:** edit the placeholders (`[Your Name]`, bio, links, projects) in `routes/web.php`, and replace the images in `public/assets/` (keep the file names, or update the paths in `routes/web.php`).
+> **Customizing:** edit your name, bio, links and projects in `routes/web.php`, and replace the images in `public/assets/` (keep the file names, or update the paths in `routes/web.php`). Then re-run `npm run export` (see Deployment) so `dist/` picks up the changes.
 
 ---
 
@@ -78,28 +82,25 @@ To create the production assets instead of running Vite, use `npm run build`.
 
 ---
 
-## ☁️ Deployment (PHP host)
+## ☁️ Deployment (static export to Vercel)
 
-GitHub Pages cannot run PHP, so deploy to a PHP-capable host. Example for **Render** (Docker):
+The portfolio has no database or server-side logic, so the Laravel page is exported to plain static HTML and hosted on Vercel, which does not need PHP.
 
-1. Push the repository to GitHub.
-2. Add a `Dockerfile` that installs PHP 8.2 + Composer + Node, runs `composer install --no-dev --optimize-autoloader`, `npm ci && npm run build`, and serves `public/` (for example with `php artisan serve --host=0.0.0.0 --port=$PORT` for a simple demo, or Nginx + PHP-FPM for production).
-3. Create a new **Web Service** on Render from the GitHub repo and choose the Docker runtime.
-4. Set these environment variables:
-   - `APP_ENV=production`, `APP_DEBUG=false`
-   - `APP_KEY` (generate locally with `php artisan key:generate --show`)
-   - `APP_URL=https://your-app.onrender.com`
-   - `SESSION_DRIVER=cookie`, `CACHE_STORE=file`, `LOG_CHANNEL=stderr`
-5. Deploy, then put the live URL in the **Live Demo** section above.
+1. **Export the site** (builds the assets, then renders the page into `dist/`):
+   ```bash
+   npm run export
+   ```
+   Stop `npm run dev` first, since the export needs the production build.
+2. **Commit and push** to GitHub, including the `dist/` folder.
+3. On [vercel.com](https://vercel.com), choose **Add New → Project**, import the GitHub repository, and click **Deploy**. No settings need changing; `vercel.json` already points Vercel at `dist/` with no build step.
+4. Put the resulting URL in the **Live Demo** section above.
 
-**Railway / Laravel Cloud:** connect the GitHub repo; they auto-detect Laravel. Set `APP_KEY`, `APP_ENV=production`, `APP_DEBUG=false`, and make sure `npm run build` runs during the build step.
-
-The site uses no database, so no migrations are needed in production.
+Every push redeploys automatically. **Remember to run `npm run export` before committing content changes**, otherwise the old `dist/` is deployed.
 
 ---
 
 ## 👤 Author
 
-- **Name:** Your Name
-- **GitHub:** [@your-username](https://github.com/your-username)
-- **LinkedIn:** [Your LinkedIn Profile](https://linkedin.com/in/your-profile)
+- **Name:** Romeo Jagonia Jr.
+- **GitHub:** [@romeojrjagonia-alt](https://github.com/romeojrjagonia-alt)
+- **LinkedIn:** [aesire56](https://www.linkedin.com/in/aesire56)

@@ -70,8 +70,8 @@
             </div>
         </div>
 
-        <img src="{{ asset('assets/Propayl_jagonia.jpg') }}" alt="Profile picture of {{ $name }}" width="288" height="288"
-             class="h-48 w-48 shrink-0 rounded-full border-4 border-brand object-cover dark:border-accent shadow-xl transition-all duration-300 ease-in-out hover:scale-105 sm:h-60 sm:w-60 md:h-72 md:w-72">
+        <img id="profile-pic" src="{{ asset('assets/Propayl_jagonia.jpg') }}" alt="Profile picture of {{ $name }}" width="288" height="288"
+             class="cursor-pointer select-none h-48 w-48 shrink-0 rounded-full border-4 border-brand object-cover dark:border-accent shadow-xl transition-all duration-300 ease-in-out hover:scale-105 sm:h-60 sm:w-60 md:h-72 md:w-72">
     </section>
 
     {{-- Projects --}}

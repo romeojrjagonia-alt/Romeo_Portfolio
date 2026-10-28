@@ -42,6 +42,50 @@ if (menuBtn && menu) {
     );
 }
 
+// Easter egg: click the profile picture 3 times and it either fades out and back in, or does a flip.
+const profilePic = document.getElementById('profile-pic');
+if (profilePic) {
+    let clicks = 0;
+    let busy = false;
+    let resetTimer;
+
+    // Slower opacity fade, while keeping the quick hover scale.
+    profilePic.style.transition = 'opacity 0.8s ease, transform 0.3s ease';
+
+    profilePic.addEventListener('click', () => {
+        if (busy) return;
+
+        clicks += 1;
+        clearTimeout(resetTimer);
+        resetTimer = setTimeout(() => (clicks = 0), 1500); // clicks must be in quick succession
+
+        if (clicks < 3) return;
+
+        clicks = 0;
+        busy = true;
+
+        // Randomly pick one of two tricks.
+        if (Math.random() < 0.5) {
+            // Fade out for a few seconds, then fade back in.
+            profilePic.style.opacity = '0';
+            setTimeout(() => {
+                profilePic.style.opacity = '1';
+                setTimeout(() => (busy = false), 800);
+            }, 3000);
+        } else {
+            // Full 360° flip.
+            const flip = profilePic.animate(
+                [
+                    { transform: 'perspective(800px) rotateY(0deg)' },
+                    { transform: 'perspective(800px) rotateY(360deg)' },
+                ],
+                { duration: 1000, easing: 'ease-in-out' },
+            );
+            flip.onfinish = () => (busy = false);
+        }
+    });
+}
+
 // Contact form: no page refresh, shows a success toast.
 const form = document.getElementById('contact-form');
 const toast = document.getElementById('toast');
