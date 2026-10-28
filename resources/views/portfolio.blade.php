@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -24,9 +24,9 @@
 
         <div class="flex items-center gap-2">
             <ul class="hidden items-center gap-6 text-sm font-medium md:flex">
-                <li><a href="#home" class="transition-all duration-300 ease-in-out hover:text-indigo-600 dark:hover:text-indigo-400">Home</a></li>
-                <li><a href="#projects" class="transition-all duration-300 ease-in-out hover:text-indigo-600 dark:hover:text-indigo-400">Projects</a></li>
-                <li><a href="#contact" class="transition-all duration-300 ease-in-out hover:text-indigo-600 dark:hover:text-indigo-400">Contact</a></li>
+                <li><a href="#home" class="transition-all duration-300 ease-in-out hover:text-brand dark:hover:text-accent">Home</a></li>
+                <li><a href="#projects" class="transition-all duration-300 ease-in-out hover:text-brand dark:hover:text-accent">Projects</a></li>
+                <li><a href="#contact" class="transition-all duration-300 ease-in-out hover:text-brand dark:hover:text-accent">Contact</a></li>
             </ul>
 
             <button type="button" data-theme-toggle aria-pressed="false" aria-label="Toggle dark mode"
@@ -53,25 +53,25 @@
     {{-- Home / Hero --}}
     <section id="home" class="mx-auto flex max-w-5xl flex-col-reverse items-center gap-10 px-5 py-16 md:flex-row md:py-24">
         <div class="text-center md:text-left">
-            <p class="mb-2 text-sm font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">Hello, I'm</p>
+            <p class="mb-2 text-sm font-semibold uppercase tracking-widest text-brand dark:text-accent">Hello, I'm</p>
             <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl">{{ $name }}</h1>
             <p class="mt-2 text-xl font-medium text-slate-500 dark:text-slate-400">{{ $title }}</p>
             <p class="mt-5 max-w-xl leading-relaxed text-slate-600 dark:text-slate-300">{{ $bio }}</p>
 
             <ul class="mt-5 flex flex-wrap justify-center gap-2 md:justify-start">
                 @foreach ($stack as $tech)
-                    <li class="rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-300">{{ $tech }}</li>
+                    <li class="rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold text-brand dark:bg-brand-light/15 dark:text-brand-light">{{ $tech }}</li>
                 @endforeach
             </ul>
 
             <div class="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
-                <a href="#projects" class="rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-lg">View Projects</a>
-                <a href="#contact" class="rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:border-indigo-600 hover:text-indigo-600 dark:border-slate-600 dark:hover:border-indigo-400 dark:hover:text-indigo-400">Contact Me</a>
+                <a href="#projects" class="rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-brand-dark hover:shadow-lg dark:bg-accent dark:text-slate-900 dark:hover:bg-brand-light">View Projects</a>
+                <a href="#contact" class="rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:border-brand hover:text-brand dark:border-slate-600 dark:hover:border-accent dark:hover:text-accent">Contact Me</a>
             </div>
         </div>
 
-        <img src="{{ asset('assets/profile.svg') }}" alt="Profile picture of {{ $name }}" width="288" height="288"
-             class="h-48 w-48 shrink-0 rounded-full border-4 border-indigo-500 object-cover shadow-xl transition-all duration-300 ease-in-out hover:scale-105 sm:h-60 sm:w-60 md:h-72 md:w-72">
+        <img src="{{ asset('assets/Propayl_jagonia.jpg') }}" alt="Profile picture of {{ $name }}" width="288" height="288"
+             class="h-48 w-48 shrink-0 rounded-full border-4 border-brand object-cover dark:border-accent shadow-xl transition-all duration-300 ease-in-out hover:scale-105 sm:h-60 sm:w-60 md:h-72 md:w-72">
     </section>
 
     {{-- Projects --}}
@@ -97,9 +97,9 @@
 
                             <div class="mt-5 flex gap-3">
                                 <a href="{{ $project['demo'] }}" target="_blank" rel="noopener"
-                                   class="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 ease-in-out hover:bg-indigo-700">Live Demo</a>
+                                   class="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition-all duration-300 ease-in-out hover:bg-brand-dark dark:bg-accent dark:text-slate-900 dark:hover:bg-brand-light">Live Demo</a>
                                 <a href="{{ $project['repo'] }}" target="_blank" rel="noopener"
-                                   class="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold transition-all duration-300 ease-in-out hover:border-indigo-600 hover:text-indigo-600 dark:border-slate-600 dark:hover:border-indigo-400 dark:hover:text-indigo-400">GitHub Repo</a>
+                                   class="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold transition-all duration-300 ease-in-out hover:border-brand hover:text-brand dark:border-slate-600 dark:hover:border-accent dark:hover:text-accent">GitHub Repo</a>
                             </div>
                         </div>
                     </article>
@@ -117,34 +117,34 @@
             <div>
                 <label for="name" class="mb-1 block text-sm font-medium">Name</label>
                 <input id="name" name="name" type="text" required autocomplete="name"
-                       class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 transition-all duration-300 ease-in-out focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 dark:border-slate-600 dark:bg-slate-800">
+                       class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 transition-all duration-300 ease-in-out focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30 dark:focus:border-accent dark:focus:ring-accent/30 dark:border-slate-600 dark:bg-slate-800">
             </div>
             <div>
                 <label for="email" class="mb-1 block text-sm font-medium">Email</label>
                 <input id="email" name="email" type="email" required autocomplete="email"
-                       class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 transition-all duration-300 ease-in-out focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 dark:border-slate-600 dark:bg-slate-800">
+                       class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 transition-all duration-300 ease-in-out focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30 dark:focus:border-accent dark:focus:ring-accent/30 dark:border-slate-600 dark:bg-slate-800">
             </div>
             <div>
                 <label for="message" class="mb-1 block text-sm font-medium">Message</label>
                 <textarea id="message" name="message" rows="5" required
-                          class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 transition-all duration-300 ease-in-out focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 dark:border-slate-600 dark:bg-slate-800"></textarea>
+                          class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 transition-all duration-300 ease-in-out focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30 dark:focus:border-accent dark:focus:ring-accent/30 dark:border-slate-600 dark:bg-slate-800"></textarea>
             </div>
             <button type="submit"
-                    class="rounded-lg bg-indigo-600 px-6 py-2.5 text-sm font-semibold text-white shadow transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-lg">Send Message</button>
+                    class="rounded-lg bg-brand px-6 py-2.5 text-sm font-semibold text-white shadow transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-brand-dark hover:shadow-lg dark:bg-accent dark:text-slate-900 dark:hover:bg-brand-light">Send Message</button>
         </form>
     </section>
 </main>
 
 <footer class="border-t border-slate-200 py-8 text-center text-sm text-slate-500 transition-colors duration-300 dark:border-slate-800 dark:text-slate-400">
     <div class="mb-2 flex justify-center gap-5">
-        <a href="{{ $github }}" target="_blank" rel="noopener" class="transition-all duration-300 ease-in-out hover:text-indigo-600 dark:hover:text-indigo-400">GitHub</a>
-        <a href="{{ $linkedin }}" target="_blank" rel="noopener" class="transition-all duration-300 ease-in-out hover:text-indigo-600 dark:hover:text-indigo-400">LinkedIn</a>
+        <a href="{{ $github }}" target="_blank" rel="noopener" class="transition-all duration-300 ease-in-out hover:text-brand dark:hover:text-accent">GitHub</a>
+        <a href="{{ $linkedin }}" target="_blank" rel="noopener" class="transition-all duration-300 ease-in-out hover:text-brand dark:hover:text-accent">LinkedIn</a>
     </div>
     &copy; {{ date('Y') }} {{ $name }}. All rights reserved.
 </footer>
 
 {{-- Success / error toast --}}
 <div id="toast" role="status" aria-live="polite"
-     class="pointer-events-none fixed bottom-6 left-1/2 z-50 max-w-[90vw] -translate-x-1/2 translate-y-4 rounded-lg bg-emerald-600 px-5 py-3 text-sm font-medium text-white opacity-0 shadow-lg transition-all duration-300 ease-in-out"></div>
+     class="pointer-events-none fixed bottom-6 left-1/2 z-50 max-w-[90vw] -translate-x-1/2 translate-y-4 rounded-lg bg-brand px-5 py-3 text-sm font-medium text-white dark:bg-accent dark:text-slate-900 opacity-0 shadow-lg transition-all duration-300 ease-in-out"></div>
 </body>
 </html>

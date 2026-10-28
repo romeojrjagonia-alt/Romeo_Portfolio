@@ -4,30 +4,29 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('portfolio', [
-        'name' => '[Your Name]',
-        'title' => 'Web Developer',
-        'bio' => 'I am passionate about building fast, accessible and well-designed websites. '
-            .'I currently work with Laravel, Tailwind CSS and JavaScript. '
-            .'[Replace this with your own 2-3 sentence bio.]',
+        'name' => 'Romeo Jagonia Jr.',
+        'title' => 'Programmer | Web Developer',
+        'bio' => 'I am a curious and inquisitive programmer and recently have been exploring web development. '
+            .'I am always looking for new challenges and opportunities to learn and grow as a developer.',
         'stack' => ['Laravel', 'PHP', 'Tailwind CSS', 'JavaScript', 'MySQL'],
-        'github' => 'https://github.com/your-username',
-        'linkedin' => 'https://linkedin.com/in/your-profile',
+        'github' => 'https://github.com/romeojrjagonia-alt',
+        'linkedin' => 'https://www.linkedin.com/in/aesire56',
         'projects' => [
             [
-                'title' => 'Project One',
-                'description' => 'A short description of what this project does, who it is for and the problem it solves. [Replace with your own.]',
-                'image' => 'assets/project-1.svg',
-                'tags' => ['Laravel', 'Tailwind CSS'],
-                'demo' => '#',
-                'repo' => 'https://github.com/your-username/project-one',
+                'title' => 'Netplay Tournament Management System',
+                'description' => 'A web application that allows users to create and manage tournaments for badminton. It includes features such as player registration, match scheduling, and score tracking. Built with Laravel and Tailwind CSS.',
+                'image' => 'assets/NetplayPreview.png',
+                'tags' => ['Laravel', 'Livewire', 'Tailwind CSS', 'MySQL'],
+                'demo' => 'https://netplay-system.up.railway.app/',
+                'repo' => 'https://github.com/romeojrjagonia-alt/Netplay-Tournament-Management-System',
             ],
             [
-                'title' => 'Project Two',
-                'description' => 'Another short description highlighting the key features and the technologies you used. [Replace with your own.]',
-                'image' => 'assets/project-2.svg',
+                'title' => 'Kakegurui Site',
+                'description' => 'A website showcasing the anime Kakegurui. Includes the featured characters in the series, without spoiling the plot.',
+                'image' => 'assets/KakeguruiPreview.jpg',
                 'tags' => ['JavaScript', 'HTML', 'CSS'],
-                'demo' => '#',
-                'repo' => 'https://github.com/your-username/project-two',
+                'demo' => 'https://kakegurui-site.vercel.app/',
+                'repo' => 'https://github.com/romeojrjagonia-alt/Kakegurui-Site',
             ],
         ],
     ]);

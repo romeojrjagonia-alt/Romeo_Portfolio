@@ -1,4 +1,4 @@
-import './bootstrap';
+﻿import './bootstrap';
 
 const body = document.body;
 
@@ -49,8 +49,8 @@ let toastTimer;
 
 const showToast = (message, isError = false) => {
     toast.textContent = message;
-    toast.classList.toggle('bg-emerald-600', !isError);
-    toast.classList.toggle('bg-red-600', isError);
+    toast.classList.toggle('bg-red-600!', isError);
+    toast.classList.toggle('text-white!', isError);
     toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => {
