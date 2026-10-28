@@ -3,7 +3,7 @@
 A clean, responsive, and interactive modern portfolio website built with **Laravel** and **Tailwind CSS** as part of the Web Development Intern Challenge.
 
 ## 🚀 Live Demo
-- **Deployed Site:** [https://your-portfolio.vercel.app](https://your-portfolio.vercel.app) *(replace with your Vercel URL after deploying)*
+- **Deployed Site:** https://romeoportfolio-nine.vercel.app
 
 ---
 
@@ -15,7 +15,7 @@ A clean, responsive, and interactive modern portfolio website built with **Larav
 - **Responsive Design:** Optimized for mobile, tablet, and desktop viewports, with a collapsible mobile menu.
 - **Dark Mode Support:** Toggle between light and dark themes (saved in the browser, defaults to your OS preference).
 - **Smooth Navigation:** Seamless anchor links (`#home`, `#projects`, `#contact`) and CSS transitions on buttons and cards.
-- **Easter Egg:** Click the profile picture 3 times in quick succession and it randomly either fades out and back in, or does a flip.
+- **Easter Egg:** Click the profile picture 3 times in quick succession and see what beholds
 
 ---
 
@@ -42,8 +42,6 @@ A clean, responsive, and interactive modern portfolio website built with **Larav
 ├── vercel.json                            # Tells Vercel to serve dist/ with no build step
 └── README.md                              # Project documentation
 ```
-
-> **Customizing:** edit your name, bio, links and projects in `routes/web.php`, and replace the images in `public/assets/` (keep the file names, or update the paths in `routes/web.php`). Then re-run `npm run export` (see Deployment) so `dist/` picks up the changes.
 
 ---
 
