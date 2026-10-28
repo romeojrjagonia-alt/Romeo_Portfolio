@@ -51,12 +51,12 @@ A clean, responsive, and interactive modern portfolio website built with **Larav
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/portfolio-challenge.git
+   git clone https://github.com/romeojrjagonia-alt/Romeo_Portfolio.git
    ```
 
 2. **Navigate to the project directory:**
    ```bash
-   cd portfolio-challenge
+   cd Romeo_Portfolio
    ```
 
 3. **Install dependencies and set up the environment:**
